@@ -39,10 +39,13 @@ public class Topology {
 			// 没有参数时，本地提交
 			if (args != null && args.length > 0) {
 				logger.info("运行远程模式");
-				conf.put(Config.NIMBUS_SEEDS, Arrays.asList("47.103.138.95"));
-				conf.put(Config.NIMBUS_THRIFT_PORT, 6627);
-				conf.put(Config.STORM_ZOOKEEPER_SERVERS, Arrays.asList("47.103.138.95"));
-				conf.put(Config.STORM_ZOOKEEPER_PORT, 2181);
+//				conf.put(Config.NIMBUS_SEEDS, Arrays.asList("47.103.138.95"));
+//				conf.put(Config.NIMBUS_THRIFT_PORT, 6627);
+//				conf.put(Config.STORM_ZOOKEEPER_SERVERS, Arrays.asList("47.103.138.95"));
+//				conf.put(Config.STORM_ZOOKEEPER_PORT, 2181);
+
+				//System.setProperty("storm.jar", "/Users/yang/Code/study/KafkaConsumer-Storm/full.jar");
+				System.setProperty("storm.jar", "/apache-storm-1.2.3/full.jar");
 				StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
 			} else {
 				// 启动本地模式

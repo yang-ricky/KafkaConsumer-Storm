@@ -25,9 +25,9 @@ public class App
 		springBean.setApplicationContext(context);
 		Topology app = context.getBean(Topology.class);
 		logger.info("启动1");
-		//String[] str = {"Storm-Remote"};
-		String[] str = null;
-		app.runStorm(str);
+		//String[] arg = {"Storm-Remote"};
+		//String[] args = null;
+		app.runStorm(args);
 		logger.info("启动2");
 	}
 }
